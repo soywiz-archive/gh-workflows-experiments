@@ -8,6 +8,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install docker
-      run: brew cask install docker
+      run: brew install bash-completion && brew cask install docker && brew install kubectl && brew cask install minikube
     - name: Check docker
-      run: docker ps
+      run: docker version && docker-compose version && docker-machine --version && kubectl version --client
