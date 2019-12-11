@@ -1,4 +1,4 @@
-name: CI
+name: "CI: ${{ github.sha }}"
 
 on: [push]
 
