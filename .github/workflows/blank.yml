@@ -5,12 +5,14 @@ on: [push]
 # Try to use docker to build things (including wine) inside github
 jobs:
   build:
-    runs-on: [macOS-10.14]
+    #runs-on: [macOS-10.14]
+    runs-on: [ubuntu-18.04]
     steps:
     - uses: actions/checkout@v1
-    - name: Install docker
-      run: brew install bash-completion && brew cask install docker && brew install kubectl
-    - name: Check docker
-      run: docker version && docker-compose version && docker-machine --version && kubectl version --client
-    - name: Docker Machine
-      run: docker-machine create --driver virtualbox dev
+    - run: env
+    #- name: Install docker
+    #  run: brew install bash-completion && brew cask install docker && brew install kubectl
+    #- name: Check docker
+    #  run: docker version && docker-compose version && docker-machine --version && kubectl version --client
+    #- name: Docker Machine
+    #  run: docker-machine create --driver virtualbox dev
